@@ -1,0 +1,75 @@
+#header{
+    width: 1200px;
+    height: 150px;
+    font-family: '배달의민족 을지로체 TTF';
+}
+.top{
+    width: 1200px;
+    height: 100px;
+}
+.logo{
+    width: 600px;
+    height: 100px;
+    float: left;
+   font-size: 70px;
+   line-height: 100px;
+}
+.menu{
+    width: 600px;
+    height: 100px;
+    float: right;
+}
+.menu button{
+    float: right;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin: 0 20px;
+    margin-top: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: gray;
+    color: white;
+    font-family: '배달의민족 을지로체 TTF';
+    font-size: 25px;
+}
+.menu button:hover{
+    background-color: goldenrod;
+}
+.input-comp{
+    width: 400px;
+    height: 50px;
+    float: right;
+}
+.input-comp span{
+    line-height: 50px;
+    margin-left: 50px;
+    font-size: 20px;
+}
+.input-comp input{
+    margin-right: 10px;
+}
+.input-comp input:focus{
+    background-color: aliceblue;
+}
+.input-comp button{
+    background-color: gray;
+    border: none;
+    color: white;
+    font-family: '배달의민족 을지로체 TTF';
+    cursor: pointer;
+}
+.input-comp button:hover{
+    background-color: goldenrod;
+}
+
+.menu button.active{
+    background-color: goldenrod;
+}
+
+.logo{
+    cursor: pointer;
+}
+.logo:hover{
+    color: gold;
+}

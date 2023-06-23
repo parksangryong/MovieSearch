@@ -1,0 +1,9 @@
+#footer{
+    float: left;
+    width: 1200px;
+    height: 50px;
+    line-height: 50px;
+    color: white;
+    background: black;
+    text-align: center;
+}
