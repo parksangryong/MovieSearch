@@ -12,14 +12,16 @@ function App() {
   const [movielist, setMovielist] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [genre, setGenre] = useState('');
-  const [sort, setSort] = useState('rating')
+  const [sort, setSort] = useState('like_count')
+  const [title, setTitle] = useState('');
+  const [limit, setLimit] = useState(18);
 
   useEffect( () => {
     loadMovie(sort, genre, currentPage);
   }, [movielist]);
 
   const loadMovie = async (sort, genre, currentPage) => {
-    const {data: {data: {movies}}} = await axios.get(`https://yts.mx/api/v2/list_movies.json?limit=18&page=${currentPage}&genre=${genre}&sort_by=${sort}`);
+    const {data: {data: {movies}}} = await axios.get(`https://yts.mx/api/v2/list_movies.json?limit=${limit}&page=${currentPage}&genre=${genre}&sort_by=${sort}&query_term=${title}`);
     //console.log(movies);
     setMovielist(movies);
     console.log(`genre = ${genre}, currentpage = ${currentPage}, sort=${sort}`)
@@ -41,9 +43,20 @@ function App() {
     setSort('year')
   }
 
+  const sortLike = () => {
+    //console.log('year App')
+    setSort('like_count')
+  }
+
   const genreSearch = (genrein) => {
     //console.log('genre App')
     setGenre(genrein);
+  }
+
+  const titleSearch = (titlein) => {
+    //console.log('title App')
+    setTitle(titlein);
+    setLimit(50);
   }
 
   const pageClick = (page) => {
@@ -53,7 +66,8 @@ function App() {
 
   return (
     <div id="App">
-      <Header sort={sort} sortTitle={sortTitle} sortRating={sortRating} sortYear={sortYear} genreSearch={genreSearch} />
+      <Header sort={sort} sortTitle={sortTitle} sortRating={sortRating} sortYear={sortYear} 
+      sortLike={sortLike} genreSearch={genreSearch} titleSearch={titleSearch} />
       
       <BrowserRouter>
         <Routes>
@@ -61,7 +75,7 @@ function App() {
           <Route path='/info/*' element={<MovieInfo />} />
         </Routes>
         <Routes>
-          <Route path='/' element={<Pagenation currentPage={currentPage} pageClick={pageClick} />} />
+          <Route path='/' element={<Pagenation currentPage={currentPage} pageClick={pageClick} title={title} />} />
           <Route path='/info/*' element={<Footer />} />
         </Routes>
       </BrowserRouter>

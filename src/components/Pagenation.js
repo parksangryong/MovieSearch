@@ -5,7 +5,10 @@ import Footer from './Footer';
 function Pagenation (props){
 
     let pageNumber = [];
-    if(props.currentPage <= 5){
+    if(props.title){
+        pageNumber.push('');
+    }
+    else if(props.currentPage <= 5){
         for(var i=1; i<=10; i++){
             pageNumber.push(i);
         }
@@ -34,14 +37,14 @@ function Pagenation (props){
     }
 
     const prev = () => {
-        if(props.currentPage === 1){
-            alert('1 page');
+        if(props.currentPage === 1 || props.title){
+            alert('first page');
             return;
         }
         props.pageClick(props.currentPage -1);
     }
     const next = () => {
-        if(props.currentPage === 50){
+        if(props.currentPage === 50 || props.title){
             alert('last page');
             return;
         }
