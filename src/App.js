@@ -27,27 +27,27 @@ function App() {
   }
 
   const sortTitle = () => {
-    console.log('title App')
+    //console.log('title App')
     setSort('title')
   }
 
   const sortRating = () => {
-    console.log('rating App')
+    //console.log('rating App')
     setSort('rating')
   }
 
   const sortYear = () => {
-    console.log('year App')
+    //console.log('year App')
     setSort('year')
   }
 
   const genreSearch = (genrein) => {
-    console.log('genre App')
+    //console.log('genre App')
     setGenre(genrein);
   }
 
   const pageClick = (page) => {
-    console.log('pageClick app');
+    //console.log('pageClick app');
     setCurrentPage(page);
   }
 

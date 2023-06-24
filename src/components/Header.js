@@ -6,22 +6,22 @@ function Header (props){
     const [genrein, setGenrein] = useState('')
 
     const sortTitle = () => {
-        console.log('title header')
+        //console.log('title header')
         props.sortTitle();
     }
 
     const sortRating = () => {
-        console.log('rating header')
+        //console.log('rating header')
         props.sortRating();
     }
 
     const sortYear = () => {
-        console.log('year header')
+        //console.log('year header')
         props.sortYear();
     }
 
     const genreSearch = () => {
-        console.log('genre header')
+        //console.log('genre header')
         props.genreSearch(genrein);
     }
 
