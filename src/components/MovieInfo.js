@@ -19,22 +19,27 @@ function MovieInfo(){
         //console.log(query)
 
         const movies = await axios.get(`https://yts.mx/api/v2/movie_details.json?movie_id=${query}`);
-        console.log(movies.data.data.movie);
+        //console.log(movies.data.data.movie);
         setGenre(movies.data.data.movie.genres)
         setMovielist(movies.data.data.movie);
-        console.log(movielist);
+        //console.log(movielist);
 
         
     }
     const genress = genre.map(
         (data) => (<span key={data} className='genre'>{data} / &nbsp;</span>)
     )
+
+    const moveU = () => {
+        const utitle = movielist.title.replace(/(\s*)/g, "");
+        window.open(`https://www.youtube.com/results?search_query=${utitle}`, '_blank')
+    }
      
 
     return(
         <div id='info'>
             <div id='info_img'>
-                <img src={movielist.large_cover_image} alt={movielist.title} />
+                <img src={movielist.large_cover_image} alt={movielist.title} onClick={moveU} />
             </div>
                 
             <div className='info_txt'>

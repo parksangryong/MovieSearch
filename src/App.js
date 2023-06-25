@@ -79,11 +79,11 @@ function App() {
       
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<MovieList movielist={movielist} />} />
+          <Route path='/*' element={<MovieList movielist={movielist} />} />
           <Route path='/info/*' element={<MovieInfo />} />
         </Routes>
         <Routes>
-          <Route path='/' element={<Pagenation currentPage={currentPage} pageClick={pageClick} title={title} genre={genre} />} />
+          <Route path='/*' element={<Pagenation currentPage={currentPage} pageClick={pageClick} title={title} genre={genre} />} />
           <Route path='/info/*' element={<Footer />} />
         </Routes>
       </BrowserRouter>
