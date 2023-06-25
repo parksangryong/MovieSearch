@@ -22,12 +22,14 @@
     color: green;
 }
 
-#movie .txt > p:nth-child(4) span:last-child{
-    color: rebeccapurple;
-}
-
-#movie .txt > p:first-child span:last-child{
+.normal{
     color: green;
+}
+.good{
+    color: red;
+}
+.bad{
+    color: blue;
 }
 
 #movie .txt p{

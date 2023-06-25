@@ -5,7 +5,7 @@ function Footer (){
 
     return(
         <div id='footer'>
-            yts.mx &copy;
+            3000개의 영화만 불러옵니다. &nbsp; yts.mx &copy; 
         </div>
     )
 }

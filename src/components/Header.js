@@ -1,6 +1,7 @@
 //로고, 필터버튼, 검색창
 import { useState } from 'react'
 import '../css/Header.css'
+import img1 from '../search.jpg'
 
 function Header (props){
     const [genrein, setGenrein] = useState('')
@@ -39,7 +40,7 @@ function Header (props){
         <div id='header'>
             <div className='top'>
                 <div className='logo' onClick={()=> window.location.href='/'}>
-                   &nbsp; Movie Search
+                   <img src={img1} /> Movie Search
                 </div>
                 <div className='menu'>
                     <button onClick={sortTitle} className={props.sort === 'title'? 'active' : ''}>Title</button>

@@ -38,10 +38,10 @@ function MovieInfo(){
             </div>
                 
             <div className='info_txt'>
-                <p><span>title : </span><span>{movielist.title}</span></p>
+                <p><span>title : </span><span className='title'>{movielist.title}</span></p>
                 <p><span>year : </span><span>{movielist.year}</span></p>
                 <p><span>language : </span><span>{movielist.language}</span></p>
-                <p><span>rating : </span><span>{movielist.rating}</span></p>
+                <p><span>rating : </span><span className={movielist.rating >= 8 ? "good" : movielist.rating >= 5 ? "normal" : "bad"}>{movielist.rating}</span></p>
                 <p><span>genre : </span>{genress}</p>
                 <p><span>summary : </span><span>{movielist.description_full}</span></p>
             </div>

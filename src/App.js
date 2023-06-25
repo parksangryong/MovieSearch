@@ -14,18 +14,26 @@ function App() {
   const [genre, setGenre] = useState('');
   const [sort, setSort] = useState('like_count')
   const [title, setTitle] = useState('');
-  const [limit, setLimit] = useState(18);
+  const [limit, setLimit] = useState(15);
 
   useEffect( () => {
     loadMovie(sort, genre, currentPage);
   }, [movielist]);
 
   const loadMovie = async (sort, genre, currentPage) => {
-    const {data: {data: {movies}}} = await axios.get(`https://yts.mx/api/v2/list_movies.json?limit=${limit}&page=${currentPage}&genre=${genre}&sort_by=${sort}&query_term=${title}`);
-    //console.log(movies);
-    setMovielist(movies);
-    console.log(`genre = ${genre}, currentpage = ${currentPage}, sort=${sort}`)
-    //console.log(movielist);
+   try {
+      const {data: {data: {movies}}} = await axios.get(`https://yts.mx/api/v2/list_movies.json?limit=${limit}&page=${currentPage}&genre=${genre}&sort_by=${sort}&query_term=${title}`);
+      //console.log(movies);
+      setMovielist(movies);
+      //console.log(`genre = ${genre}, currentpage = ${currentPage}, sort=${sort}`)
+      //console.log(movielist);
+    } catch (ex) {   
+        if (ex.response && ex.response.status === 404) {
+            setMovielist([]);
+        } else {
+            setMovielist([]);
+        }
+    }
   }
 
   const sortTitle = () => {
@@ -75,10 +83,11 @@ function App() {
           <Route path='/info/*' element={<MovieInfo />} />
         </Routes>
         <Routes>
-          <Route path='/' element={<Pagenation currentPage={currentPage} pageClick={pageClick} title={title} />} />
+          <Route path='/' element={<Pagenation currentPage={currentPage} pageClick={pageClick} title={title} genre={genre} />} />
           <Route path='/info/*' element={<Footer />} />
         </Routes>
       </BrowserRouter>
+
     </div>
   );
 }

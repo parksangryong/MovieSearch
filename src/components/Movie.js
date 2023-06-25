@@ -18,7 +18,7 @@ function Movie (props){
                 <p><span>title : </span><span>{props.title}</span></p>
                 <p><span>year : </span><span>{props.year}</span></p>
                 <p><span>language : </span><span>{props.language}</span></p>
-                <p><span>rating : </span><span>{props.rating}</span></p>
+                <p><span>rating : </span><span className={props.rating >= 8 ? "good" : props.rating >= 5 ? "normal" : "bad"}>{props.rating}</span></p>
                 
             </div>
             <p><span>genre : </span><span>{genress}</span></p>

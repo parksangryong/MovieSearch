@@ -12,12 +12,12 @@ function Pagenation (props){
         for(var i=1; i<=10; i++){
             pageNumber.push(i);
         }
-    }else if(props.currentPage <= 44){
-        for(var i=props.currentPage-4; i<=props.currentPage+6; i++){
+    }else if(props.currentPage <= 194){
+        for(var i=props.currentPage-4; i<=props.currentPage+5; i++){
             pageNumber.push(i);
         }
-    }else{
-        for(var i=41; i<=50; i++){
+    }else{ 
+        for(var i=191; i<=200; i++){
             pageNumber.push(i);
         }
     }
@@ -44,7 +44,7 @@ function Pagenation (props){
         props.pageClick(props.currentPage -1);
     }
     const next = () => {
-        if(props.currentPage === 50 || props.title){
+        if(props.currentPage === 200 || props.title){
             alert('last page');
             return;
         }
