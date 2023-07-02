@@ -77,14 +77,15 @@ function App() {
       <Header sort={sort} sortTitle={sortTitle} sortRating={sortRating} sortYear={sortYear} 
       sortLike={sortLike} genreSearch={genreSearch} titleSearch={titleSearch} />
 
-        <Routes>
-          <Route path='/*' element={<MovieList movielist={movielist} />} />
-          <Route path='/info/*' element={<MovieInfo />} />
-        </Routes>
-        <Routes>
-          <Route path='/*' element={<Pagenation currentPage={currentPage} pageClick={pageClick} title={title} genre={genre} />} />
-          <Route path='/info/*' element={<Footer />} />
-        </Routes>
+      <Routes>
+        <Route path='/' element={<MovieList movielist={movielist} />} />
+        <Route path='/info/*' element={<MovieInfo />} />
+      </Routes>
+      
+      <Routes>
+        <Route path='/' element={<Pagenation currentPage={currentPage} pageClick={pageClick} title={title} genre={genre} />} />
+        <Route path='/info/*' element={<Footer />} />
+      </Routes>
     </div>
   );
 }
