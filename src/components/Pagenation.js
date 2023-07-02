@@ -1,6 +1,5 @@
 //페이지네이션
 import '../css/Pagenation.css'
-import Footer from './Footer';
 
 function Pagenation (props){
 
@@ -57,7 +56,6 @@ function Pagenation (props){
                     {result}
                     <button onClick={next}>&gt;</button>
                 </div>
-        <Footer />
         </div>
     )
 }

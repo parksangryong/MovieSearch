@@ -3,6 +3,8 @@ import '../css/MovieInfo.css'
 import axios from 'axios';
 import queryString from 'query-string';
 
+//info 연결해서 써도 되지만 github에서 작동이 계속 안되서 하다하다 결국 포기...
+
 function MovieInfo(){
     const [movielist, setMovielist] = useState([]);
     const [genre, setGenre] = useState([]);
@@ -15,16 +17,20 @@ function MovieInfo(){
     const getMovie = async() => {
         const queryObj =  queryString.parse(window.location.search);
         const query = queryObj.movieid
-
         //console.log(query)
 
-        const movies = await axios.get(`https://yts.mx/api/v2/movie_details.json?movie_id=${query}`);
-        //console.log(movies.data.data.movie);
-        setGenre(movies.data.data.movie.genres)
-        setMovielist(movies.data.data.movie);
-        //console.log(movielist);
-
-        
+        try{
+            const movies = await axios.get(`https://yts.mx/api/v2/movie_details.json?movie_id=${query}`);
+            //console.log(movies.data.data.movie);
+            setGenre(movies.data.data.movie.genres)
+            setMovielist(movies.data.data.movie);
+            //console.log(movielist);
+        }
+        catch (error){
+            console.log('ded');
+            setGenre([]);
+            setMovielist([]);
+        }
     }
     const genress = genre.map(
         (data) => (<span key={data} className='genre'>{data} / &nbsp;</span>)

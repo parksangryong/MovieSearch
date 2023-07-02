@@ -3,10 +3,8 @@ import axios from 'axios';
 import Header from './components/Header';
 import MovieList from './components/MovieList';
 import Footer from './components/Footer';
-import Pagenation from './components/Pagenation';
-import MovieInfo from './components/MovieInfo';
 import { useEffect, useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import {BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   const [movielist, setMovielist] = useState([]);
@@ -16,11 +14,13 @@ function App() {
   const [title, setTitle] = useState('');
   const [limit, setLimit] = useState(15);
 
-  useEffect( () => {
-    loadMovie(sort, genre, currentPage);
+  useEffect( 
+   () => {
+    loadMovie();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [movielist]);
 
-  const loadMovie = async (sort, genre, currentPage) => {
+  const loadMovie = async () => {
    try {
       const {data: {data: {movies}}} = await axios.get(`https://yts.mx/api/v2/list_movies.json?limit=${limit}&page=${currentPage}&genre=${genre}&sort_by=${sort}&query_term=${title}`);
       //console.log(movies);
@@ -76,16 +76,14 @@ function App() {
     <div id="App">
       <Header sort={sort} sortTitle={sortTitle} sortRating={sortRating} sortYear={sortYear} 
       sortLike={sortLike} genreSearch={genreSearch} titleSearch={titleSearch} />
+     
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <Routes>
+          <Route path='/' element={<MovieList movielist={movielist} currentPage={currentPage} pageClick={pageClick} title={title} genre={genre} />} />
+        </Routes>
+      </BrowserRouter>
 
-      <Routes>
-        <Route path='/' element={<MovieList movielist={movielist} />} />
-        <Route path='/info/*' element={<MovieInfo />} />
-      </Routes>
-      
-      <Routes>
-        <Route path='/' element={<Pagenation currentPage={currentPage} pageClick={pageClick} title={title} genre={genre} />} />
-        <Route path='/info/*' element={<Footer />} />
-      </Routes>
+      <Footer />
     </div>
   );
 }

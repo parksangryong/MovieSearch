@@ -39,8 +39,8 @@ function Header (props){
     return(
         <div id='header'>
             <div className='top'>
-                <div className='logo' onClick={()=> window.location.href='/MovieSearch'}>
-                   <img src={img1} /> Movie Search
+                <div className='logo' onClick={()=> window.location.href='/MovieSearch/'}>
+                   <img src={img1} alt='logoimg' /> Movie Search
                 </div>
                 <div className='menu'>
                     <button onClick={sortTitle} className={props.sort === 'title'? 'active' : ''}>Title</button>

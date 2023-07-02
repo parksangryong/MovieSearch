@@ -16,6 +16,19 @@
     margin-right: 10px;
 }
 
+#movie .info-txt{
+    width: 360px;
+    height: 300px;
+    float: left;
+    margin-right: 15px;
+    font-size: 0.9em;
+    background-color: gray;
+    text-align: center;
+    overflow-y:scroll;
+    color: white;
+    font-weight: 600;
+    
+}
 
 #movie .txt > p:first-child span:last-child{
     font-size: 15px;
