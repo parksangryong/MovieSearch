@@ -77,7 +77,7 @@ function App() {
       <Header sort={sort} sortTitle={sortTitle} sortRating={sortRating} sortYear={sortYear} 
       sortLike={sortLike} genreSearch={genreSearch} titleSearch={titleSearch} />
       
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter>
         <Routes>
           <Route path='/*' element={<MovieList movielist={movielist} />} />
           <Route path='/info/*' element={<MovieInfo />} />
