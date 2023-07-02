@@ -7,7 +7,7 @@ function Movie (props){
     )
     
     const moveInfo = () => {
-        window.location.href="/info?movieid=" + props.id
+        window.location.href="/MovieSearch/info?movieid=" + props.id
     }
 
     return(

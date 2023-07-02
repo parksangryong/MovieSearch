@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import Pagenation from './components/Pagenation';
 import MovieInfo from './components/MovieInfo';
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   const [movielist, setMovielist] = useState([]);
@@ -76,8 +76,7 @@ function App() {
     <div id="App">
       <Header sort={sort} sortTitle={sortTitle} sortRating={sortRating} sortYear={sortYear} 
       sortLike={sortLike} genreSearch={genreSearch} titleSearch={titleSearch} />
-      
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+
         <Routes>
           <Route path='/*' element={<MovieList movielist={movielist} />} />
           <Route path='/info/*' element={<MovieInfo />} />
@@ -86,8 +85,6 @@ function App() {
           <Route path='/*' element={<Pagenation currentPage={currentPage} pageClick={pageClick} title={title} genre={genre} />} />
           <Route path='/info/*' element={<Footer />} />
         </Routes>
-      </BrowserRouter>
-
     </div>
   );
 }
