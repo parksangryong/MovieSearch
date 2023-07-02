@@ -12,7 +12,7 @@ function MovieList (props){
         )
     }
     else{
-        var result = alert('정보가 없습니다');
+        var result = '정보가 없습니다';
         window.location.reload();
     }
 
