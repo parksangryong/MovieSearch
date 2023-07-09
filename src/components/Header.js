@@ -39,7 +39,7 @@ function Header (props){
     return(
         <div id='header'>
             <div className='top'>
-                <div className='logo' onClick={()=> window.location.href='/MovieSearch/'}>
+                <div className='logo' onClick={()=> window.location.href='/'}>
                    <img src={img1} alt='logoimg' /> Movie Search
                 </div>
                 <div className='menu'>
