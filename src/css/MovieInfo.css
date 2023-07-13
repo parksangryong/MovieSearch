@@ -34,7 +34,7 @@
   border: 5px solid goldenrod;
   padding: 30px;
   color: black;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .info_txt p span:first-child {
