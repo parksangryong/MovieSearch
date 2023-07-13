@@ -1,5 +1,5 @@
-#App{
-  width: 1200px;
+#App {
+  width: 100%;
   height: auto;
   margin: 0 auto;
   background-color: black;
@@ -7,16 +7,16 @@
   padding-top: 15px;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-ul{
+ul {
   list-style: none;
 }
 
 @media only screen and (min-width: 1360px) {
-  #movielist{
-      width: 100% !important;
+  #movielist {
+    width: 100% !important;
   }
 }

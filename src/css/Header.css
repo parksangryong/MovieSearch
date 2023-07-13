@@ -1,83 +1,138 @@
-#header{
-    width: 1200px;
-    height: 150px;
-    font-family: '배달의민족 을지로체 TTF';
+#header {
+  width: 100%;
+  height: 150px;
+  font-family: "배달의민족 을지로체 TTF";
 }
-.top{
+.top {
+  width: 100%;
+  height: 100px;
+}
+.logo {
+  width: 50%;
+  height: 100px;
+  float: left;
+  font-size: 4em;
+  line-height: 100px;
+}
+.menu {
+  width: 50%;
+  height: 100px;
+  float: right;
+}
+.menu button {
+  float: right;
+  width: 12%;
+  height: 90px;
+  border-radius: 50%;
+  margin: 0 5%;
+  margin-top: 5px;
+  cursor: pointer;
+  border: none;
+  background-color: gray;
+  color: white;
+  font-family: "배달의민족 을지로체 TTF";
+  font-size: 1.3em;
+}
+.menu button:hover {
+  background-color: goldenrod;
+}
+.input-comp {
+  width: 20%;
+  height: 50px;
+  float: right;
+  margin-right: 1%;
+}
+.input-comp span {
+  line-height: 50px;
+  font-size: 1.1em;
+}
+.input-comp input {
+  margin-right: 3%;
+  width: 50%;
+}
+.input-comp input:focus {
+  background-color: aliceblue;
+}
+.input-comp button {
+  background-color: gray;
+  border: none;
+  color: white;
+  font-family: "배달의민족 을지로체 TTF";
+  cursor: pointer;
+}
+.input-comp button:hover {
+  background-color: goldenrod;
+}
+
+.menu button.active {
+  background-color: goldenrod;
+}
+
+.logo {
+  cursor: pointer;
+}
+.logo:hover {
+  color: gold;
+}
+.logo img {
+  margin-left: 5%;
+  width: 10%;
+  padding-top: 15px;
+  position: relative;
+  top: 15px;
+}
+
+@media screen and (max-width: 1075px) {
+  .logo {
+    font-size: 2.5em;
+  }
+  .menu button {
+    height: 60%;
+    font-size: 0.9em;
+  }
+  .input-comp {
+    width: 40%;
+    display: inline;
+    float: right;
+  }
+  .input-comp span {
+    font-size: 0.7em;
+  }
+  .input-comp input {
+    margin-right: 3%;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 630px) {
+  .logo {
     width: 100%;
-    height: 100px;
-}
-.logo{
-    width: 600px;
-    height: 100px;
-    float: left;
-   font-size: 70px;
-   line-height: 100px;
-}
-.menu{
-    width: 600px;
-    height: 100px;
+    text-align: center;
+    height: 150px;
+  }
+  .menu {
+    width: 90%;
+    margin-right: 8%;
+  }
+  .input-comp {
+    width: 100%;
     float: right;
-}
-.menu button{
-    float: right;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    margin: 0 30px;
-    margin-top: 5px;
-    cursor: pointer;
-    border: none;
-    background-color: gray;
-    color: white;
-    font-family: '배달의민족 을지로체 TTF';
-    font-size: 25px;
-}
-.menu button:hover{
-    background-color: goldenrod;
-}
-.input-comp{
-    width: 300px;
-    height: 50px;
-    float: right;
-}
-.input-comp span{
-    line-height: 50px;
-    margin-left: 10px;
-    font-size: 20px;
-}
-.input-comp input{
-    margin-right: 10px;
-    width: 140px;
-}
-.input-comp input:focus{
-    background-color: aliceblue;
-}
-.input-comp button{
-    background-color: gray;
-    border: none;
-    color: white;
-    font-family: '배달의민족 을지로체 TTF';
-    cursor: pointer;
-}
-.input-comp button:hover{
-    background-color: goldenrod;
+    text-align: center;
+  }
 }
 
-.menu button.active{
-    background-color: goldenrod;
+@media screen and (max-width: 400px) {
+  .menu button {
+    font-size: 0.7em;
+    height: 40%;
+  }
 }
 
-.logo{
-    cursor: pointer;
-}
-.logo:hover{
-    color: gold;
-}
-.logo img{
-    margin-left: 30px;
-    width: 70px;
-    padding-top: 15px;
-    position: relative;
-    top: 15px;
+@media screen and (max-width: 315px) {
+  .logo {
+    font-size: 1.5em;
+    height: 100px;
+  }
+  .menu {
+    height: 70px;
+  }
 }
